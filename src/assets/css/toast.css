@@ -1,0 +1,28 @@
+.toast_container {
+    position: absolute;
+    right: -40%;
+    bottom: 0;
+    min-height: auto;
+    background: var(--color-primary);
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px #d5d5d5;
+    transition: all .5s ease;
+    opacity: 0;
+    background: var(--color-primary);
+    color: var(--color-secondary);
+}
+
+.toast_container.active {
+    opacity: 1;
+    right: 0;
+    bottom: 0;
+    transition: all .5s ease;
+}
+
+.toast_container .message {
+    font-size: 18px;
+    font-weight: 500;
+    padding: 0 10px;
+}

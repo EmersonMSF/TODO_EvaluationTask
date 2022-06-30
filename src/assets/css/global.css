@@ -1,0 +1,148 @@
+@import "addCard.css";
+@import "card.css";
+@import "deleteCard.css";
+@import "header.css";
+@import "homepage.css";
+@import "login.css";
+@import "logout.css";
+@import "product.css";
+@import "toast.css";
+@import "loader.css";
+
+.main_container {
+    padding: 10px;
+}
+
+.popup_container {
+    visibility: hidden;
+    flex-direction: column;
+    position: absolute;
+    background: white;
+    width: 500px;
+    justify-content: space-between;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 50px #00000080;
+    transform: translate(0, 0) rotate(8deg);
+    bottom: -100%;
+    left: 0;
+    transition: all .5s ease;
+
+    z-index: 200;
+}
+
+.popup_container::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    border-radius: 8px;
+    bottom: 0;
+    right: 0;
+    background-color: white;
+    transform: rotate(4deg);
+    z-index: -1;
+    /* box-shadow: 0 0 50px #00000080; */
+}
+
+.popup_container::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    border-radius: 8px;
+    bottom: 0;
+    right: 0;
+    background-color: white;
+    transform: rotate(0deg);
+    z-index: -1;
+    box-shadow: 0 0 50px #00000080;
+}
+
+.popup_container.active {
+    display: flex;
+    visibility: visible;
+    top: 50%;
+    left: 50%;
+    bottom: unset;
+
+    transform: translate(-50%, -50%) rotate(5deg);
+}
+
+.popup_container .heading {
+    font-size: var(--large-font-size);
+}
+
+
+.overlay {
+    display: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #000000b3;
+    z-index: 100;
+}
+
+.overlay.active {
+    display: flex;
+}
+
+.table_container {
+    width: 100%;
+    margin-top: 20px;
+    box-shadow: 2px 2px 5px grey;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    padding-top: 25px;
+}
+
+th {
+    position: relative;
+    text-align: left;
+    cursor: pointer;
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+}
+
+th, td {
+    text-align: center;
+    padding: 8px;
+    min-width: 100px;
+    border: 1px solid #00000042;
+}
+
+tr {}
+
+
+/* th:after {
+    font-family: "Font Awesome 5 Free";
+    content: "\f106";
+    font-size: 12px;
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+}
+
+th.active {
+    background-color: red;
+}
+
+th.active:after {
+    transform: rotate(180deg);
+} */
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+table .btn {
+    padding: 0;
+}

@@ -1,0 +1,15 @@
+.delete_card_popup_container{
+    min-height: 170px;
+}
+.delete_card_popup_container .content{
+    font-size: var(--extralarge-font-size);
+}
+.actionBtns{
+    display: flex;
+    justify-content: space-around;
+}
+.actionBtns button{
+    padding: 10px;
+    width: 150px;
+    border-radius: 8px;
+}

@@ -1,0 +1,42 @@
+.product_container {
+    padding: 10px;
+}
+
+th {
+    position: relative;
+}
+
+th.tableheader:first-child .tableheader_dropdown {
+    display: none !important;
+}
+
+th.tableheader:hover .tableheader_dropdown {
+    display: flex;
+}
+
+th.tableheader .tableheader_dropdown {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    background: var(--color-primary);
+    color: var(--color-secondary);
+    top: 100%;
+    right: 0;
+    /* width: 80px; */
+    width: 100%;
+    box-shadow: 1px 1px 5px grey;
+}
+
+th.tableheader .tableheader_dropdown.active {
+    display: flex;
+}
+
+
+th.tableheader .tableheader_dropdown span {
+    padding: 5px 10px;
+    border-bottom: 1px solid #80808040;
+}
+
+th.tableheader .tableheader_dropdown span:hover {
+    background-color: #f5f5f5;
+}
