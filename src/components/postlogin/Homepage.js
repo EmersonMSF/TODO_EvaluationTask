@@ -47,7 +47,7 @@ function Homepage(props) {
         const currentAllCardsData = AllCardsData
 
         // console.log("props.cardDataProp", props.cardDataProp);
-        // console.log("enteredCarddata", enteredCarddata);
+        console.log("enteredCarddata", enteredCarddata);
         // console.log("cardIdToAddCard", cardIdToAddCard);
         console.log("before currentAllCardsData", currentAllCardsData);
 
@@ -158,7 +158,7 @@ function Homepage(props) {
                     }
 
                 })
-                console.log("crash targetCardItem", targetCardItem);
+                // console.log("crash targetCardItem", targetCardItem);
                 // console.log("crash trimmedData", trimmedData);
 
                 item['data'] = trimmedData

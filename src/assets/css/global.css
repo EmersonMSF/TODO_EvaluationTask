@@ -109,10 +109,11 @@ th {
     color: var(--color-primary);
 }
 
+
 th, td {
     text-align: center;
     padding: 8px;
-    min-width: 100px;
+    min-width: 120px;
     border: 1px solid #00000042;
 }
 
@@ -145,4 +146,22 @@ tr:nth-child(even) {
 
 table .btn {
     padding: 0;
+}
+
+.error_message {
+    display: none;
+    padding-left: 20px;
+    font-size: 12px;
+    color: var(--color-secondary);
+    font-weight: 600;
+}
+
+.error_message.active {
+    display: flex;
+}
+
+.error_message p {}
+
+.submit_btn_field {
+    margin-top: 25px !important;
 }

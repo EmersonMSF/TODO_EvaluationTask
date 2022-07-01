@@ -73,6 +73,7 @@ export function getDefaultTaskDetailsIfEmpty() {
     }
 }
 
+
 export const saveTaskDataInLocalStorage = (data) => {
 
     console.log("saveTaskDataInLocalStorage", saveTaskDataInLocalStorage);
@@ -130,4 +131,13 @@ export const checkStringContainsSpecialChars = (string) => {
     console.log("string", string);
     console.log("specialchars.test(string)", specialchars.test(string));
     return specialchars.test(string)
+}
+
+export const checkStringContainsUpperCase = (str) => {
+    return (/[A-Z]/.test(str));
+}
+
+export const checkUsernameContainsAlphabets = (str) => {
+    var pattern = /[a-zA-Z]/g;
+    return pattern.test(str)
 }

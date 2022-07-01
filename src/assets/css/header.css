@@ -39,9 +39,9 @@
 }
 
 .header_container ul li.active::before {
-    width: 7px;
+    transition: width .2s ease;
+    width: 80%;
 }
-
 
 .header_container ul li:hover {
     border-color: var(--color-secondary);

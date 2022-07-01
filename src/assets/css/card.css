@@ -21,6 +21,7 @@
 
 .cardItem {
     display: flex;
+    flex-direction: column;
     background-color: var(--color-primary);
     padding: 5px;
     font-size: 14px;
@@ -51,9 +52,28 @@
     border: 2px solid transparent;
 }
 
+.cardItem .title_holder {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cardItem .title_holder p {
+    line-break: anywhere;
+}
+
+.cardItem .description_holder {
+    display: flex;
+    background: var(--color-cream);
+    padding: 8px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-radius: 4px;
+}
+
 .cardItem_holder .close_btn:hover {
     border-color: var(--color-primary);
 }
+
 
 .add_cardBtn {
     padding-top: 10px;

@@ -29,7 +29,7 @@ export default function Product() {
                     return {
                         ...data,
                         id: parseInt(data.id),
-                        price: parseFloat(data.price)
+                        // price: parseFloat(data.price)
                     }
                 })
 
@@ -47,7 +47,11 @@ export default function Product() {
     // 3 -> description
     // 4 -> price
 
-    // const [sortTableByColumnID, setSortTableByColumnID] = useState(0)
+    const [selectedColumnForSort, setSelectedColumnForSort] = useState(
+        {
+            columnId: null,
+            sortBy: null
+        })
 
     useEffect(() => {
         // console.log("API data", fetchData());
@@ -63,15 +67,36 @@ export default function Product() {
                 <tr>
                     {
                         PRODUCT_TABLEHEADERS.map((item, index) => {
-                            return <th key={index} className="tableheader">{item}
+                            return <th key={index} className="tableheader">
+                                {item}
                                 <div className="tableheader_dropdown">
                                     <span onClick={(e) => {
                                         getAPIdata(index - 1, 'asc')
+                                        setSelectedColumnForSort({ columnId: index, sortBy: "asc" })
                                     }}>Ascending</span>
                                     <span onClick={(e) => {
                                         getAPIdata(index - 1, 'desc')
+                                        setSelectedColumnForSort({ columnId: index, sortBy: "desc" })
                                     }}>Descending</span>
                                 </div>
+                                {/* <span className={selectedColumnForSort === index ? "sortSign" : "sortSign active"} ><i className="fa-solid fa-sort"></i></span> */}
+                                {/* <span className={selectedColumnForSort.columnId === index && ? "sortSign active" : "sortSign"}> */}
+                                {/* <i className="fa-solid fa-sort-up"></i>
+                                </span> */}
+                                {/* <span className={selectedColumnForSort === index ? "sortSign active" : "sortSign"} ><i className="fa-solid fa-sort-down"></i></span> */}
+
+                                <span className="sortSign active">
+                                    <i
+                                        className={selectedColumnForSort.columnId === index && selectedColumnForSort.sortBy === "desc"
+                                            ? "fa-solid fa-sort-up"
+                                            : selectedColumnForSort.columnId === index && selectedColumnForSort.sortBy === "asc"
+                                                ? "fa-solid fa-sort-down" : "fa-solid fa-sort"}
+
+                                    ></i>
+
+                                </span>
+
+
                             </th>
                         })
                     }

@@ -117,8 +117,15 @@ export default function Cards(props) {
             onDragOver={dragOver}
             data-card-item-id={props.CardItemID}
             data-parent-card-id={props.ParentCardID}>
-            <p>{props.CardItemTitle}</p>
-            <span className="close_btn" onClick={() => openDeleteCardPopup(props.CardItemID)}>&times;</span>
+            <div className="title_holder">
+                <p>{props.CardItemTitle}</p>
+                <span className="close_btn" onClick={() => openDeleteCardPopup(props.CardItemID)}>&times;</span>
+            </div>
+
+            <div className="description_holder">
+                <p>{props.CardItemDescription}</p>
+            </div>
+
         </div>
     }
 
@@ -135,6 +142,7 @@ export default function Cards(props) {
                         return <CardItem
                             key={index}
                             CardItemTitle={card.title}
+                            CardItemDescription={card.description}
                             CardItemID={card.itemID} // card item id
                             ParentCardID={props.cardNo} // card id
                         // id={"card_" + (index + 1)}
